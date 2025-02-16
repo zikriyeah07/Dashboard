@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f8f9fc;
+    color: #333;
+    display: flex;
+    height: 100vh;
+}
+
+.dashboard {
+    display: flex;
+    width: 100%;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 20%;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #000000;
+    text-align: center;
+}
+
+.sectionsidebar h2 {
+    font-size: 1em;
+    color: #000000;
+    text-align: center;
+}
+
+.sectionsidebar i {
+    font-size: 1em;
+    color: #000000;
+    text-align: center;
+    /* Icon animation */
+    animation: rotate 2s infinite linear;
+    transform-origin: center;
+    transform: rotate(0deg);
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    /* End of icon animation */
+}
+
+.menuebutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 0.8em sans-serif;
+    width: 25px;
+    margin-left: 0px;
+    height: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.icons-nav {
+    color: #ffffff;
+    &:hover {
+        color: #d40c0c;
+    }
+}
+
+.navlist {
+    list-style: none;
+}
+
+.sidebar nav a.active {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sidebar nav a:hover {
+    background-color: #e9f2ff;
+    color: #000000;
+    font-weight: bold;
+}
+
+.accounts a {
+    display: block;
+    margin: 15px 0;
+    padding: 10px;
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.accounts a:hover {
+    color: #000000;
+}
+
+.upgrade {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #f8f9fc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.upgrade button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upgrade button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Main Content */
+
+.content {
+    width: 60%;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+header input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+header button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #0056b3;
+}
+
+.tasks {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.task {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    margin: 0 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task.priority {
+    background-color: #28a745;
+}
+
+.task.upcoming {
+    background-color: #17a2b8;
+}
+
+.task.overdue {
+    background-color: #dc3545;
+}
+
+.task.pending {
+    background-color: #ffc107;
+}
+
+.recent,
+.workspace {
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.project,
+.space {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project:hover,
+.space:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Right Panel */
+
+.right-panel {
+    width: 20%;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.urgent-tasks p,
+.chat p {
+    margin: 15px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.chat p {
+    display: flex;
+    align-items: center;
+}
+
+.chat p::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #000000;
+    border-radius: 50%;
+    margin-right: 10px;
+}
